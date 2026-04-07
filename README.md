@@ -14,16 +14,16 @@ A dedicated security wrapper runs before every agent call
 
 | Agent | Role |
 |-------|------|
-| 🧭 **Intent Detector** | Classifies user intent (price objection, product inquiry, buying signal, small talk) and labels each message |
-| 🔍 **Researcher** | Performs semantic search over the product knowledge base (Chroma DB) via Agentic RAG to retrieve verified facts |
-| 🧠 **Profiler** | Analyses conversation sentiment to detect if the buyer is engaging or pulling away. Activates after 4+ messages to ensure enough signal exists before profiling |
-| 🎯 **Closer** | Synthesises intent, retrieved facts and the buyer profile to craft a persuasive, tone-aware response |
-| 🛡️ **Auditor** | Cross-checks every claim against the source PDF and business rules to eliminate hallucinations |
+| **Intent Detector** | Classifies user intent (price objection, product inquiry, buying signal, small talk) and labels each message |
+| **Researcher** | Performs semantic search over the product knowledge base (Chroma DB) via Agentic RAG to retrieve verified facts |
+| **Profiler** | Analyses conversation sentiment to detect if the buyer is engaging or pulling away. Activates after 4+ messages to ensure enough signal exists before profiling |
+| **Closer** | Synthesises intent, retrieved facts and the buyer profile to craft a persuasive, tone-aware response |
+| **Auditor** | Cross-checks every claim against the source PDF and business rules to eliminate hallucinations |
 
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **LLM** — GPT-4o via Azure OpenAI
 - **RAG** — ChromaDB + HuggingFace `sentence-transformers/all-MiniLM-L6-v2`
@@ -31,7 +31,7 @@ A dedicated security wrapper runs before every agent call
   
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repo
 
@@ -72,7 +72,7 @@ streamlit run app.py
 
 ---
 
-## 💬 Demo
+## Demo
 
 ### Greeting - intent detected as `GREETING_SMALL_TALK`
 The bot responds naturally and opens the conversation without pushing a sale immediately.
