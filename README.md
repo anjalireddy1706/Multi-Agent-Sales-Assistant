@@ -2,7 +2,7 @@
 
 An AI-powered sales chatbot that doesn't just answer questions - it reads the emotional tone of the conversation and adapts its strategy in real time. Built with a multi-agent architecture, Agentic RAG and a dedicated security layer.
 
-![Flowchart](screenshots/Flowchart.png)
+![flowchart](screenshots/flowchart.png)
 
 ---
 
