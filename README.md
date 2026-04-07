@@ -6,7 +6,7 @@ An AI-powered sales chatbot that doesn't just answer questions - it reads the em
 
 ---
 
-## 💡 The Idea
+## The Idea
 
 Most sales bots repeat the same scripted answers regardless of how the customer feels. This project explores whether an AI can adjust its negotiation strategy based on the emotional trajectory of a conversation — just like a skilled human sales rep would.
 
@@ -14,7 +14,7 @@ Most sales bots repeat the same scripted answers regardless of how the customer 
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 The system uses an **intent-based router** to dynamically orchestrate 5 specialised agents rather than a fixed linear chain.
 
@@ -41,7 +41,7 @@ A dedicated security wrapper runs **before** every agent call — built entirely
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **LLM** — GPT-4o via Azure OpenAI
 - **RAG** — ChromaDB + HuggingFace `sentence-transformers/all-MiniLM-L6-v2`
@@ -51,7 +51,7 @@ A dedicated security wrapper runs **before** every agent call — built entirely
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the repo
 
@@ -92,7 +92,7 @@ streamlit run app.py
 
 ---
 
-## 💬 Demo
+## Demo
 
 ### Greeting - intent detected as `GREETING_SMALL_TALK`
 The bot responds naturally and opens the conversation without pushing a sale immediately.
