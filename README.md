@@ -79,28 +79,28 @@ The bot responds naturally and opens the conversation without pushing a sale imm
 
 ![Greeting](screenshots/greeting.png)
 
----
+
 
 ### Pricing query - intent detected as `PRICING_INQUIRY`
 The Researcher agent retrieves the exact pricing from the product PDF. The Closer presents it clearly with a value-led framing rather than just listing numbers.
 
 ![Pricing](screenshots/pricing.png)
 
----
+
 
 ### Multi-item purchase — sentiment detected as `curious`
 The customer asks about buying three units. The bot calculates the total, stays helpful and the Profiler flags the sentiment as curious - adapting the tone accordingly.
 
 ![Purchase](screenshots/purchase.png)
 
----
+
 
 ### Buying signal — sentiment detected as `excited`
 The customer signals purchase intent. The bot detects excitement, shifts into closing mode, reinforces value with product stats and drives toward a decision.
 
 ![Buying Signal](screenshots/buying_signal.png)
 
----
+
 
 ### Prompt injection blocked 🛡️
 A user attempts a data extraction attack. The security layer catches it instantly before any LLM is involved and blocks it with a clear message.
