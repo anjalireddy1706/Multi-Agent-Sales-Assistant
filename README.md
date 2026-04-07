@@ -1,6 +1,8 @@
 # 🤖 Multi-Agent Sales Assistant
 
-An AI-powered sales chatbot that doesn't just answer questions — it reads the emotional tone of the conversation and adapts its strategy in real time. Built with a multi-agent architecture, Agentic RAG, and a dedicated security layer.
+An AI-powered sales chatbot that doesn't just answer questions - it reads the emotional tone of the conversation and adapts its strategy in real time. Built with a multi-agent architecture, Agentic RAG and a dedicated security layer.
+
+![Flowchart](screenshots/Flowchart.png)
 
 ---
 
@@ -88,22 +90,18 @@ CHAT_DEPLOYMENT_NAME=gpt-4o
 streamlit run app.py
 ```
 
-### 6. Upload a product PDF
-
-Use the sidebar to upload and index a product specification PDF. The assistant will use this as its knowledge base.
-
 ---
 
 ## 💬 Demo
 
-### Greeting — intent detected as `GREETING_SMALL_TALK`
+### Greeting - intent detected as `GREETING_SMALL_TALK`
 The bot responds naturally and opens the conversation without pushing a sale immediately.
 
 ![Greeting](screenshots/greeting.png)
 
 ---
 
-### Pricing query — intent detected as `PRICING_INQUIRY`
+### Pricing query - intent detected as `PRICING_INQUIRY`
 The Researcher agent retrieves the exact pricing from the product PDF. The Closer presents it clearly with a value-led framing rather than just listing numbers.
 
 ![Pricing](screenshots/pricing.png)
@@ -111,36 +109,20 @@ The Researcher agent retrieves the exact pricing from the product PDF. The Close
 ---
 
 ### Multi-item purchase — sentiment detected as `curious`
-The customer asks about buying three units. The bot calculates the total, stays helpful, and the Profiler flags the sentiment as curious — adapting the tone accordingly.
+The customer asks about buying three units. The bot calculates the total, stays helpful and the Profiler flags the sentiment as curious - adapting the tone accordingly.
 
 ![Purchase](screenshots/purchase.png)
 
 ---
 
 ### Buying signal — sentiment detected as `excited`
-The customer signals purchase intent. The bot detects excitement, shifts into closing mode, reinforces value with product stats, and drives toward a decision.
+The customer signals purchase intent. The bot detects excitement, shifts into closing mode, reinforces value with product stats and drives toward a decision.
 
 ![Buying Signal](screenshots/buying_signal.png)
 
 ---
 
 ### Prompt injection blocked 🛡️
-A user attempts a data extraction attack. The security layer catches it instantly using regex — before any LLM is involved — and blocks it with a clear message.
+A user attempts a data extraction attack. The security layer catches it instantly before any LLM is involved and blocks it with a clear message.
 
 ![Security](screenshots/security.png)
-
----
-
-## 📁 Project Structure
-
-```
-├── app.py                    # Main Streamlit UI and agent pipeline
-├── agent_intentdetection.py  # Intent classification
-├── agent_profiler.py         # Buyer sentiment profiling
-├── agent_researcher.py       # RAG-based product knowledge retrieval
-├── agent_closer.py           # Response generation
-├── agent_auditor.py          # Hallucination detection and fact checking
-├── agent_securitycheck.py    # Prompt injection defence and audit logging
-├── .gitignore
-└── README.md
-```
