@@ -1,6 +1,8 @@
 # 🤖 Multi-Agent Sales Assistant
 
-An AI-powered sales chatbot that doesn't just answer questions - it reads the emotional tone of the conversation and adapts its strategy in real time. Built with a multi-agent architecture, Agentic RAG and a dedicated security layer. Most sales bots repeat the same scripted answers regardless of how the customer feels. This project explores whether an AI can adjust its negotiation strategy based on the emotional trajectory of a conversation, just like a skilled human sales representative would.
+An AI-powered sales chatbot that doesn't just answer questions - it reads the emotional tone of the conversation and adapts its strategy in real time. Built with a multi-agent architecture, Agentic RAG and a dedicated security layer. 
+
+Most sales bots repeat the same scripted answers regardless of how the customer feels. This project explores whether an AI can adjust its negotiation strategy based on the emotional trajectory of a conversation, just like a skilled human sales representative would.
 
 ![flowchart](screenshots/flowchart.png)
 
