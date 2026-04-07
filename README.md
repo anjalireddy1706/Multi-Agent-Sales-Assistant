@@ -1,43 +1,23 @@
 # 🤖 Multi-Agent Sales Assistant
 
-An AI-powered sales chatbot that doesn't just answer questions - it reads the emotional tone of the conversation and adapts its strategy in real time. Built with a multi-agent architecture, Agentic RAG and a dedicated security layer.
+An AI-powered sales chatbot that doesn't just answer questions - it reads the emotional tone of the conversation and adapts its strategy in real time. Built with a multi-agent architecture, Agentic RAG and a dedicated security layer. Most sales bots repeat the same scripted answers regardless of how the customer feels. This project explores whether an AI can adjust its negotiation strategy based on the emotional trajectory of a conversation, just like a skilled human sales representative would.
 
 ![flowchart](screenshots/flowchart.png)
 
----
+### Security Layer
 
-## 💡 The Idea
-
-Most sales bots repeat the same scripted answers regardless of how the customer feels. This project explores whether an AI can adjust its negotiation strategy based on the emotional trajectory of a conversation — just like a skilled human sales rep would.
-
-**Example:** A customer frustrated about pricing doesn't need to hear the MSRP repeated. They need empathy, context, and a value-focused response. This system detects that frustration and responds accordingly.
-
----
-
-## 🏗️ Architecture
-
-The system uses an **intent-based router** to dynamically orchestrate 5 specialised agents rather than a fixed linear chain.
+A dedicated security wrapper runs before every agent call
 
 ### Agents
 
 | Agent | Role |
 |-------|------|
-| 🧭 **Intent Detector** | Classifies user intent (price objection, product inquiry, buying signal, small talk) and labels each message before routing |
-| 🔍 **Researcher** | Performs semantic search over the product knowledge base via Agentic RAG to retrieve verified facts |
+| 🧭 **Intent Detector** | Classifies user intent (price objection, product inquiry, buying signal, small talk) and labels each message |
+| 🔍 **Researcher** | Performs semantic search over the product knowledge base (Chroma DB) via Agentic RAG to retrieve verified facts |
 | 🧠 **Profiler** | Analyses conversation sentiment to detect if the buyer is engaging or pulling away. Activates after 4+ messages to ensure enough signal exists before profiling |
-| 🎯 **Closer** | Synthesises retrieved facts and the buyer profile to craft a persuasive, tone-aware response |
-| 🛡️ **Auditor** | N-shot self-reflection loop that cross-checks every claim against the source PDF and business rules to eliminate hallucinations |
+| 🎯 **Closer** | Synthesises intent, retrieved facts and the buyer profile to craft a persuasive, tone-aware response |
+| 🛡️ **Auditor** | Cross-checks every claim against the source PDF and business rules to eliminate hallucinations |
 
-### Security Layer
-
-A dedicated security wrapper runs **before** every agent call — built entirely in pure Python, no LLM involved:
-
-- Regex-based prompt injection detection (20+ patterns)
-- Data extraction attack detection
-- Input length and topic scope validation
-- Human-in-the-loop flagging for high-risk actions
-- Output scanning to block sensitive data leakage
-- Full audit logging of every interaction
 
 ---
 
@@ -46,9 +26,7 @@ A dedicated security wrapper runs **before** every agent call — built entirely
 - **LLM** — GPT-4o via Azure OpenAI
 - **RAG** — ChromaDB + HuggingFace `sentence-transformers/all-MiniLM-L6-v2`
 - **Framework** — LangChain + Streamlit
-- **Security** — Custom regex-based injection defence (no LLM involved)
-- **Language** — Python 3.11+
-
+  
 ---
 
 ## 🚀 Getting Started
